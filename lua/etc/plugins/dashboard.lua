@@ -3,6 +3,19 @@ local M = {
   event = 'VimEnter',
   dependencies = {
     {'nvim-tree/nvim-web-devicons'},
+    {
+      'ahmedkhalf/project.nvim',
+      config = function()
+	require('project_nvim').setup {}
+      end,
+      dependencies = {
+	'nvim-telescope/telescope.nvim', branch = '0.1.x',
+	dependencies = {'nvim-lua/plenary.nvim'},
+	config = function()
+	  require('telescope').load_extension('projects')
+	end
+      },
+    },
   },
 }
 
@@ -16,14 +29,18 @@ M.config = function()
       },
       center = {
 	{
-	  icon = ' ',
-	  icon_hl = 'Title',
-	  desc = 'Find File           ',
-	  desc_hl = 'String',
-	  key = 'b',
-	  keymap = 'SPC f f',
-	  key_hl = 'Number',
-	  action = 'lua print(2)'
+	  icon = ' ',
+	  desc = 'Projects',
+	  key = 'p',
+	  keymap = ':Telescore projects',
+	  action = 'Telescope projects'
+	},
+	{
+	  icon = '󰿅 ',
+	  desc = 'Quit',
+	  key = 'q',
+	  keymap = ':q',
+	  action = 'q'
 	},
       },
     },
