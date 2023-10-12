@@ -7,10 +7,7 @@ local M = {
 M.name = "catppuccin-macchiato"
 
 function M.config()
-  local status_ok = pcall(vim.cmd.colorscheme, M.name)
-  if not status_ok then
-    return
-  end
+  vim.cmd([[colorscheme catppuccin-macchiato]])
 end
 
 return M
