@@ -3,6 +3,7 @@ local M = {
   event = 'VimEnter',
   dependencies = {
     {'nvim-tree/nvim-web-devicons'},
+    {'williamboman/mason.nvim'},
     {
       'ahmedkhalf/project.nvim',
       config = function()
@@ -59,6 +60,13 @@ M.config = function()
 	  key = 'l',
 	  keymap = ':Lazy',
 	  action = 'Lazy'
+	},
+	{
+	  icon = '󰺾 ',
+	  desc = 'Mason',
+	  key = 'm',
+	  keymap = ':Mason',
+	  action = 'Mason'
 	},
 	{
 	  icon = '󰿅 ',
