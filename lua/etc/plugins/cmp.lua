@@ -17,6 +17,7 @@ local M = {
     },
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'hrsh7th/cmp-path' },
+    { 'onsails/lspkind-nvim' },
   }
 }
 
@@ -61,6 +62,21 @@ M.config = function()
       { name = 'luasnip' },
       { name = 'path' }
     }),
+
+    formatting = {
+      fields = {
+	"kind", "abbr", "menu"
+      },
+      format = require("lspkind").cmp_format({
+	menu = ({
+	  nvim_lsp = "[LSP]",
+	  luasnip = "[LuaSnip]",
+	  path = "[Path]",
+	}),
+	mode = "kind"
+      }),
+    }
+
   })
 end
 
