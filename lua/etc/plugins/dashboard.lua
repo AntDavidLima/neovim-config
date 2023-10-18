@@ -7,7 +7,10 @@ local M = {
     {
       'ahmedkhalf/project.nvim',
       config = function()
-	require('project_nvim').setup()
+	require('project_nvim').setup({
+	  patterns = { 'package.json' },
+	  detection_methods = { 'pattern' },
+	})
       end,
       event = 'CmdlineEnter',
       dependencies = {
@@ -28,7 +31,7 @@ M.config = function()
   require('dashboard').setup {
     theme = 'doom',
     config = {
-      disable_move,
+      disable_move = true,
       week_header = {
 	enable = true,
       },
