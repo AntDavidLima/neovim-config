@@ -16,7 +16,6 @@ local M = {
       }
     },
     { 'hrsh7th/cmp-nvim-lsp' },
-    { 'hrsh7th/cmp-path' },
     { 'onsails/lspkind-nvim' },
   }
 }
@@ -60,7 +59,6 @@ M.config = function()
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
       { name = 'luasnip' },
-      { name = 'path' }
     }),
 
     formatting = {
@@ -71,7 +69,6 @@ M.config = function()
 	menu = ({
 	  nvim_lsp = "[LSP]",
 	  luasnip = "[LuaSnip]",
-	  path = "[Path]",
 	}),
 	mode = "kind"
       }),
