@@ -34,6 +34,13 @@ M.config = function()
 		},
 		diagnostics = {
 			show_on_dirs = true,
+			enable = true,
+			icons = {
+				hint = "",
+				info = "",
+				warning = "",
+				error = "",
+			},
 		},
 		modified = {
 			enable = true,
