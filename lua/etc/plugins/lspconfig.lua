@@ -1,5 +1,6 @@
 local M = {
 	'neovim/nvim-lspconfig',
+	event = 'BufEnter',
 }
 
 M.config = function()

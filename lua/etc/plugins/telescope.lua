@@ -1,5 +1,6 @@
 local M = {
 	'nvim-telescope/telescope.nvim',
+	keys = { '<leader>f' },
 	branch = '0.1.x',
 	dependencies = {
 		{ 'nvim-lua/plenary.nvim' },
