@@ -1,6 +1,6 @@
 local M = {
 	'akinsho/toggleterm.nvim',
-	event =  'BufEnter',
+	keys = { [[<C-\>]] }
 }
 
 M.config = function ()
@@ -13,7 +13,7 @@ M.config = function ()
 			end
 		end,
 		open_mapping = [[<C-\>]],
-		start_in_insert =  true,
+		start_in_insert =  false,
 		direction  =  'horizontal',
 		close_on_exit = true,
 	})

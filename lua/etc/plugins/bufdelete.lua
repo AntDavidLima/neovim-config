@@ -1,6 +1,6 @@
 local M = {
 	'famiu/bufdelete.nvim',
-	event = 'BufEnter'
+	keys = { 'Q' }
 }
 
 M.config = function()
