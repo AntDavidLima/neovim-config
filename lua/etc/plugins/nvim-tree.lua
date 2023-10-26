@@ -72,6 +72,8 @@ M.config = function()
 			vim.keymap.set("n", "l", edit_or_open, opts('Edit or open'))
 		end
 	})
+
+	vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle)
 end
 
 return M

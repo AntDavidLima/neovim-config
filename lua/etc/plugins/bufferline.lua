@@ -13,8 +13,8 @@ M.config = function()
 			diagnostics_indicator = function(_, _, diagnostics_dict)
 				local s = " "
 				for e, n in pairs(diagnostics_dict) do
-					local sym = e == "error" and " "
-							or (e == "warning" and " " or e == "hint" and " " or " ")
+					local sym = e == "error" and "  "
+							or (e == "warning" and "  " or e == "hint" and "  " or "  ")
 					s = s .. n .. sym
 				end
 				return s
@@ -31,8 +31,6 @@ M.config = function()
 	vim.keymap.set('n', 'L', vim.cmd.BufferLineCycleNext)
 	vim.keymap.set('n', '<A-h>', vim.cmd.BufferLineMovePrev)
 	vim.keymap.set('n', '<A-l>', vim.cmd.BufferLineMoveNext)
-
-	vim.opt.mousemoveevent = true
 end
 
 return M
