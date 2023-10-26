@@ -17,6 +17,7 @@ local M = {
 		},
 		{ 'hrsh7th/cmp-nvim-lsp' },
 		{ 'onsails/lspkind-nvim' },
+		{ 'windwp/nvim-autopairs' },
 	}
 }
 
@@ -67,6 +68,11 @@ M.config = function()
 		}
 
 	})
+
+	cmp.event:on(
+		'confirm_done',
+		require('nvim-autopairs.completion.cmp').on_confirm_done()
+	)
 end
 
 return M
