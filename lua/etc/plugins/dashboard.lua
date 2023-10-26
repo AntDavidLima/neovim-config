@@ -4,27 +4,7 @@ local M = {
 	dependencies = {
 		{ 'nvim-tree/nvim-web-devicons' },
 		{ 'williamboman/mason.nvim' },
-		{
-			'ahmedkhalf/project.nvim',
-			config = function()
-				require('project_nvim').setup({
-					patterns = { 'package.json', 'init.lua' },
-					detection_methods = { 'pattern' },
-				})
-			end,
-			event = 'CmdlineEnter',
-			dependencies = {
-				{
-					'nvim-telescope/telescope.nvim',
-					branch = '0.1.x',
-					dependencies = { 'nvim-lua/plenary.nvim' },
-					config = function()
-						require('telescope').load_extension('projects')
-					end,
-					event = 'CmdlineEnter',
-				},
-			},
-		},
+		{ 'nvim-telescope/telescope.nvim' },
 	},
 }
 
