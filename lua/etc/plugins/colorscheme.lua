@@ -4,9 +4,16 @@ local M = {
 	priority = 1000,
 }
 
-M.name = 'catppuccin-macchiato'
+M.name = 'catppuccin'
 
 function M.config()
+	require("catppuccin").setup({
+		flavour = "macchiato",
+		integrations = {
+			mason = true,
+		}
+	})
+
 	vim.cmd.colorscheme(M.name)
 end
 

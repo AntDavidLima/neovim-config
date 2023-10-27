@@ -1,14 +1,19 @@
 local M = {
 	'akinsho/bufferline.nvim',
 	version = 'v4.*',
-	dependencies = 'nvim-tree/nvim-web-devicons',
+	dependencies = {
+		'nvim-tree/nvim-web-devicons',
+		'catppuccin/nvim',
+	},
 	event = 'BufEnter',
 }
 
 M.config = function()
 	local bufferline = require('bufferline')
 	bufferline.setup {
+		highlights = require("catppuccin.groups.integrations.bufferline").get(),
 		options = {
+			separator_style = "thin", -- "slant" | "slope" | "thick" | "thin"
 			diagnostics = 'nvim_lsp',
 			diagnostics_indicator = function(_, _, diagnostics_dict)
 				local s = " "
