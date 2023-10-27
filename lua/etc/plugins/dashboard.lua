@@ -32,6 +32,13 @@ M.config = function()
 					action = 'Telescope oldfiles'
 				},
 				{
+					icon = ' ',
+					desc = 'Search Text',
+					key = 't',
+					keymap = ':Telescope live_grep',
+					action = 'Telescope live_grep'
+				},
+				{
 					icon = ' ',
 					desc = 'Settings',
 					key = 's',
