@@ -3,7 +3,6 @@ local M = {
 	dependencies = {
 		'nvim-tree/nvim-web-devicons',
 	},
-	event = 'VimEnter'
 }
 
 M.config = function()

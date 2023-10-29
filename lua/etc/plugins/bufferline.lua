@@ -5,7 +5,6 @@ local M = {
 		'nvim-tree/nvim-web-devicons',
 		'catppuccin/nvim',
 	},
-	event = 'BufEnter',
 }
 
 M.config = function()

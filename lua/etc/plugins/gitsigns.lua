@@ -1,6 +1,5 @@
 local M = {
 	'lewis6991/gitsigns.nvim',
-	event = 'BufEnter',
 }
 
 M.config = function ()
