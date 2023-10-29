@@ -1,9 +1,8 @@
 local M = {
 	'nvim-treesitter/nvim-treesitter',
 	build = ':TSUpdate',
-	event = 'BufEnter',
 	dependencies = {
-		{ 'windwp/nvim-ts-autotag' }
+		'windwp/nvim-ts-autotag',
 	}
 }
 

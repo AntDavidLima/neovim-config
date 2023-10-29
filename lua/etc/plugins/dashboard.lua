@@ -1,10 +1,9 @@
 local M = {
 	'glepnir/dashboard-nvim',
-	event = 'VimEnter',
 	dependencies = {
-		{ 'nvim-tree/nvim-web-devicons' },
-		{ 'williamboman/mason.nvim' },
-		{ 'nvim-telescope/telescope.nvim' },
+		'nvim-tree/nvim-web-devicons',
+		'williamboman/mason.nvim',
+		'nvim-telescope/telescope.nvim',
 	},
 }
 
