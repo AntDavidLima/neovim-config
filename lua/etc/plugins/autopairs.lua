@@ -1,9 +1,11 @@
 local M = {
 	'windwp/nvim-autopairs',
-	event = "InsertEnter",
+	dependencies = {
+		'nvim-treesitter/nvim-treesitter',
+	},
 }
 
-M.config = function ()
+M.config = function()
 	require("nvim-autopairs").setup({
 		check_ts = true,
 	})
