@@ -28,6 +28,7 @@
         "/home/david/.local/share/nvim/lazy/bufferline.nvim/lua",
         "/home/david/.local/share/nvim/lazy/nvim-web-devicons/lua",
         "/home/david/.config/nvim/lua",
-        "${3rd}/luv/library"
+        "${3rd}/luv/library",
+        "${3rd}/luassert/library"
     ],
 }

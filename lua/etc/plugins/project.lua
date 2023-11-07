@@ -4,7 +4,7 @@ local M = {
 
 M.config = function()
 	require('project_nvim').setup({
-		patterns = { 'package.json', 'init.lua' },
+		patterns = { '.git' },
 		detection_methods = { 'pattern' },
 	})
 end
