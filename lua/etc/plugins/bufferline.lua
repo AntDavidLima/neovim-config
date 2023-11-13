@@ -1,24 +1,25 @@
 local M = {
-	'akinsho/bufferline.nvim',
-	version = 'v4.*',
+	"akinsho/bufferline.nvim",
+	version = "v4.*",
 	dependencies = {
-		'nvim-tree/nvim-web-devicons',
-		'catppuccin/nvim',
+		"nvim-tree/nvim-web-devicons",
+		"catppuccin/nvim",
 	},
 }
 
 M.config = function()
-	local bufferline = require('bufferline')
-	bufferline.setup {
+	local bufferline = require("bufferline")
+	bufferline.setup({
 		highlights = require("catppuccin.groups.integrations.bufferline").get(),
+		---@diagnostic disable-next-line: missing-fields
 		options = {
 			separator_style = "thin", -- "slant" | "slope" | "thick" | "thin"
-			diagnostics = 'nvim_lsp',
+			diagnostics = "nvim_lsp",
 			diagnostics_indicator = function(_, _, diagnostics_dict)
 				local s = " "
 				for e, n in pairs(diagnostics_dict) do
 					local sym = e == "error" and "  "
-							or (e == "warning" and "  " or e == "hint" and "  " or "  ")
+						or (e == "warning" and "  " or e == "hint" and "  " or "  ")
 					s = s .. n .. sym
 				end
 				return s
@@ -26,15 +27,15 @@ M.config = function()
 			offsets = {
 				{
 					filetype = "NvimTree",
-				}
+				},
 			},
 		},
-	}
+	})
 
-	vim.keymap.set('n', 'H', vim.cmd.BufferLineCyclePrev)
-	vim.keymap.set('n', 'L', vim.cmd.BufferLineCycleNext)
-	vim.keymap.set('n', '<A-h>', vim.cmd.BufferLineMovePrev)
-	vim.keymap.set('n', '<A-l>', vim.cmd.BufferLineMoveNext)
+	vim.keymap.set("n", "H", vim.cmd.BufferLineCyclePrev)
+	vim.keymap.set("n", "L", vim.cmd.BufferLineCycleNext)
+	vim.keymap.set("n", "<A-h>", vim.cmd.BufferLineMovePrev)
+	vim.keymap.set("n", "<A-l>", vim.cmd.BufferLineMoveNext)
 end
 
 return M

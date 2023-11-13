@@ -1,21 +1,22 @@
 local M = {
-	'nvim-treesitter/nvim-treesitter',
-	build = ':TSUpdate',
+	"nvim-treesitter/nvim-treesitter",
+	build = ":TSUpdate",
 	dependencies = {
-		'windwp/nvim-ts-autotag',
-	}
+		"windwp/nvim-ts-autotag",
+	},
 }
 
 M.config = function()
-	require('nvim-treesitter.configs').setup({
+	---@diagnostic disable-next-line: missing-fields
+	require("nvim-treesitter.configs").setup({
 		ensure_installed = {
-			'css',
-			'html',
-			'javascript',
-			'typescript',
-			'tsx',
-			'lua',
-			'yuck',
+			"css",
+			"html",
+			"javascript",
+			"typescript",
+			"tsx",
+			"lua",
+			"yuck",
 		},
 		highlight = {
 			enable = true,

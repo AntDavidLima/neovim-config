@@ -15,6 +15,7 @@ M.config = function()
 	})
 	require("mason-lspconfig").setup_handlers({
 		function(server_name)
+			---@diagnostic disable-next-line: undefined-field
 			require("lspconfig")[server_name].setup({
 				capabilities = require("cmp_nvim_lsp").default_capabilities(),
 			})
