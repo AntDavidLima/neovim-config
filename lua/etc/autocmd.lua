@@ -10,30 +10,32 @@ vim.api.nvim_create_autocmd("QuitPre", {
 		end
 		if #invalid_win == #wins - 1 then
 			-- Should quit, so we close all invalid windows.
-			for _, w in ipairs(invalid_win) do vim.api.nvim_win_close(w, true) end
+			for _, w in ipairs(invalid_win) do
+				vim.api.nvim_win_close(w, true)
+			end
 		end
-	end
+	end,
 })
 
-local function open_nvim_tree(data)
-	-- buffer is a directory
-	local directory = vim.fn.isdirectory(data.file) == 1
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+	callback = function(data)
+		-- buffer is a directory
+		local directory = vim.fn.isdirectory(data.file) == 1
 
-	if not directory then
-		return
-	end
+		if not directory then
+			return
+		end
 
-	-- create a new, empty buffer
-	vim.cmd.enew()
+		-- create a new, empty buffer
+		vim.cmd.enew()
 
-	-- wipe the directory buffer
-	vim.cmd.bw(data.buf)
+		-- wipe the directory buffer
+		vim.cmd.bw(data.buf)
 
-	-- change to the directory
-	vim.cmd.cd(data.file)
+		-- change to the directory
+		vim.cmd.cd(data.file)
 
-	-- open the tree
-	require("nvim-tree.api").tree.open()
-end
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+		-- open the tree
+		require("nvim-tree.api").tree.open()
+	end,
+})
