@@ -32,7 +32,7 @@ M.config = function()
 	vim.keymap.set("t", "<C-A-j>", [[<Cmd> resize -2<CR>]])
 	vim.keymap.set("t", "<C-A-k>", [[<Cmd> resize +2<CR>]])
 
-	vim.keymap.set("t", "<esc>", [[<C-\><C-n>]])
+	vim.keymap.set("t", "<A-esc>", [[<C-\><C-n>]])
 end
 
 return M
