@@ -23,7 +23,7 @@ M.config = function()
 		lazygit:toggle()
 	end
 
-	vim.keymap.set("n", "<leader>g", Toggle_lazygit)
+	vim.keymap.set("n", "<leader>gl", Toggle_lazygit)
 
 	vim.keymap.set("t", "<C-w>k", [[<C-\><C-n><C-w>k]])
 	vim.keymap.set("t", "<C-w>h", [[<C-\><C-n><C-w>h]])
